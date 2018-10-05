@@ -21,7 +21,7 @@ class Nav1 extends Component {
         <Navbar.Header>
           <Navbar.Brand>
             <Link to="/main">
-              <Image className="nav-logo" />이 책 반 냥
+              <div className="thisBook">이 책 반 냥</div>
             </Link>
           </Navbar.Brand>
           <Navbar.Toggle />

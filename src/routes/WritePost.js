@@ -1,8 +1,14 @@
 import React, { Component } from "react";
+import Nav2 from "../components/Nav2";
 
 class WritePost extends Component {
   render() {
-    return <div>this is write</div>;
+    return (
+      <div>
+        <Nav2 />
+        <div>this is write</div>
+      </div>
+    );
   }
 }
 
