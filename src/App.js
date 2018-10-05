@@ -1,25 +1,37 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Login from "./routes/Login";
+import SignUp from "./routes/SignUp";
+import FindPw from "./routes/FindPw";
+import ResetPw from "./routes/ResetPw";
+import PickTaste from "./routes/PickTaste";
+import Main from "./routes/Main";
+import MyLike from "./routes/MyLike";
+import Followings from "./routes/Followings";
+import WritePost from "./routes/WritePost";
+import PostDetail from "./routes/PostDetail";
+import MyPage from "./routes/MyPage";
+import "./App.css";
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+      <div>
+        <Router>
+          <Switch>
+            <Route exact path="/" component={Login} />
+            <Route path="/signup" component={SignUp} />
+            <Route path="/findpw" component={FindPw} />
+            <Route path="/resetpw" component={ResetPw} />
+            <Route path="/picktaste" component={PickTaste} />
+            <Route path="/main" component={Main} />
+            <Route path="/mylike" component={MyLike} />
+            <Route path="/followings" component={Followings} />
+            <Route path="/writepost" component={WritePost} />
+            <Route path="/postdetail" component={PostDetail} />
+            <Route path="/mypage" component={MyPage} />
+          </Switch>
+        </Router>
       </div>
     );
   }
