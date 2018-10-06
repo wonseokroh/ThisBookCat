@@ -17,8 +17,13 @@ class Nav2 extends Component {
           <Navbar.Toggle />
         </Navbar.Header>
         <Navbar.Collapse>
+          <Nav pullLeft>
+            <NavItem eventKey={1} href="#">
+              Draft
+            </NavItem>
+          </Nav>
           <Nav pullRight>
-            <NavItem eventKey={2} href="/mypage">
+            <NavItem eventKey={2} href="#">
               POST
               <Icon name="paper plane outline" size="big" />
             </NavItem>
