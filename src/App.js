@@ -16,7 +16,7 @@ import "./App.css";
 class App extends Component {
   render() {
     return (
-      <div>
+      <div className = 'App'>
         <Router>
           <Switch>
             <Route exact path="/" component={Login} />
@@ -28,7 +28,7 @@ class App extends Component {
             <Route path="/mylike" component={MyLike} />
             <Route path="/followings" component={Followings} />
             <Route path="/writepost" component={WritePost} />
-            <Route path="/postdetail" component={PostDetail} />
+            <Route path="/postdetail/:id" component={PostDetail} />
             <Route path="/mypage" component={MyPage} />
           </Switch>
         </Router>

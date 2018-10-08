@@ -1,0 +1,26 @@
+.Main {
+    text-align: center;
+}
+
+.BookBoard {
+    display: inline-block;
+    border:solid;
+    border-width: 1px;
+    border-color: white;
+    border-radius: 25px;
+    margin: 2%;
+    size:100%;
+    padding: 3%;
+}
+
+.likeThumbnail {
+    position: relative;
+    border-radius: 25px;
+    right:5%;
+    top:-10000%;
+}
+
+.BookBoard:hover {
+    background-color: lightgray;
+    
+}

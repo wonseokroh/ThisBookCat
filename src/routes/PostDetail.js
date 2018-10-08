@@ -1,8 +1,12 @@
 import React, { Component } from "react";
+import '../components/PostDetail/CSS/PostDetail.css'
 
 class PostDetail extends Component {
   render() {
-    return <div>this is postdetail</div>;
+    const photoID = this.props.match.params.id
+    return <div className = 'detailPhoto'>
+      <img className = 'likeDetailPhoto' src = {`https://picsum.photos/400/400?image=${photoID}`} alt = {photoID}/>
+    </div>;
   }
 }
 
