@@ -1,0 +1,91 @@
+.login_container {
+  /* box-sizing: border-box; */
+
+  padding-top: 20vh;
+  display: -webkit-flex;
+  display:         flex;
+  -webkit-align-items: center;
+          align-items: center;
+  -webkit-justify-content: center;
+          justify-content: center;
+
+  
+}
+
+.login_container_1{
+
+  text-align: center;
+  width: 40%;
+  max-width: 400px;
+  min-width: 300px;
+
+  height: 100%;
+  min-height: 500px;
+  padding: 50px 20px 50px 20px;
+  background-color: #ffc300;
+}
+
+.signup_container_1{
+  text-align: center;
+  width: 40%;
+  max-width: 400px;
+  min-width: 300px;
+
+  height: 100%;
+  min-height: 500px;
+  padding: 50px 20px 50px 20px;
+  background-color: #ff6f69;
+}
+
+.findpw_container_1{
+  text-align: center;
+  width: 40%;
+  max-width: 400px;
+  min-width: 300px;
+
+  height: 100%;
+  min-height: 500px;
+  padding: 50px 20px 50px 20px;
+  background-color: #96ceb4;
+}
+
+h1, h5{
+  margin: 0;
+}
+
+.login_container_2{
+  padding: 0 0 30px 0;
+}
+
+.login_input{
+  margin: 5px 0 5px 0;
+  width: 70%;
+  height: 2em;
+}
+.findPw_input{
+  margin: 5px 5px 5px 0;
+  width: 60%;
+  height: 2em;
+}
+
+.signup_email{
+  padding: 0 0 30px 0;
+}
+
+.login_btn{
+  margin: 5px 0 5px 0;
+  width: 70%;
+  height: 30px;
+}
+
+.login_flex{
+  padding: 0 50px 0 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-content: center;
+}
+
+.login_privacy{
+  padding: 20px;
+}
