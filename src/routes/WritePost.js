@@ -3,6 +3,7 @@ import Nav2 from "../components/Nav2";
 import Thumbnail from "../components/WritePost/Thumbnail";
 import { Grid, Row, Col } from "react-bootstrap";
 import Bookapi from "../components/WritePost/Bookapi";
+import MyEditor from "../components/WritePost/MyEditor";
 
 class WritePost extends Component {
   render() {
@@ -38,6 +39,19 @@ class WritePost extends Component {
                 }}
               >
                 <Bookapi />
+              </div>
+            </Col>
+          </Row>
+          <Row className="show-grid">
+            <Col xs={12} style={{ display: "flex" }}>
+              <div
+                style={{
+                  display: "flex",
+                  flex: "1",
+                  marginTop: "30px"
+                }}
+              >
+                <MyEditor />
               </div>
             </Col>
           </Row>
