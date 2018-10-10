@@ -1,0 +1,13 @@
+.taste {
+
+    position: relative;
+    width: 200px;
+    height: 200px;
+    color: black;
+    background-color: white;
+    border: solid;
+    border-width: 1px;
+    border-color: black;
+    margin:5%;
+    padding: 5%;
+}

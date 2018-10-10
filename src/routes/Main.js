@@ -8,7 +8,7 @@ import '../components/Main/CSS/Main.css'
 class Main extends Component {
   
   state = {}
-
+  
   componentDidMount () {
     this._getUrls()
   }

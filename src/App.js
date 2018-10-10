@@ -28,7 +28,7 @@ class App extends Component {
             <Route path="/mylike" component={MyLike} />
             <Route path="/followings" component={Followings} />
             <Route path="/writepost" component={WritePost} />
-            <Route path="/postdetail/:id" component={PostDetail} />
+            <Route path="/postdetail" component={PostDetail} />
             <Route path="/mypage" component={MyPage} />
           </Switch>
         </Router>
