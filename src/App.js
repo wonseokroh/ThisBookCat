@@ -19,12 +19,13 @@ class App extends Component {
       <div className = 'App'>
         <Router>
           <Switch>
-            <Route exact path="/" component={Login} />
+            <Route exact path="/" component={Main} />
+            <Route path="/login" component={Login} />
             <Route path="/signup" component={SignUp} />
             <Route path="/findpw" component={FindPw} />
             <Route path="/resetpw" component={ResetPw} />
             <Route path="/picktaste" component={PickTaste} />
-            <Route path="/main" component={Main} />
+            {/* <Route path="/main" component={Main} /> */}
             <Route path="/mylike" component={MyLike} />
             <Route path="/followings" component={Followings} />
             <Route path="/writepost" component={WritePost} />

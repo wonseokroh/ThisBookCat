@@ -3,9 +3,6 @@ import {
   Navbar,
   Nav,
   NavItem,
-  NavDropdown,
-  MenuItem,
-  Image,
   FormControl,
   FormGroup,
   Button

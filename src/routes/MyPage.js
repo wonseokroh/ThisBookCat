@@ -1,8 +1,10 @@
 import React, { Component } from "react";
 import Nav1 from "../components/Nav1";
+
 import MyPageProFile from "../components/MyPage/MyPageProFile"
 
 import '../components/MyPage/CSS/MyPage.css'
+
 
 class MyPage extends Component {
 
@@ -12,7 +14,6 @@ class MyPage extends Component {
       <Nav1/>
       <MyPageProFile/>
       </div>
-     
     )
   }
 }
