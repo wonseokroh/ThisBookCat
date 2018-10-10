@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import '../components/Login/Login.css';
 import { Icon } from "semantic-ui-react";
+import { Link } from "react-router-dom";
 
 class SignUp extends Component {
   render() {
@@ -23,8 +24,8 @@ class SignUp extends Component {
           <div><button className='login_btn'>회원가입하기</button></div>
 
           <div className='login_flex'>
-            <div>로그인하러 가기</div>
-            <div>아이디/비밀번호 찾기</div>
+            <Link to="/"><div>로그인하러 가기</div></Link>
+            <Link to="/findpw"><div>아이디/비밀번호 찾기</div></Link>
           </div>
         </div>
       </div>
