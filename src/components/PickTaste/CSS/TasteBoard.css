@@ -1,0 +1,14 @@
+.TasteBoard {
+    display: inline-flex;
+    width: 90%;
+    height: 80%;
+    background-color: white;
+    border: solid;
+    border-width: 1px;
+    border-color: black;
+    text-align: center;
+    justify-content: center;
+    margin-top: 5%;
+    overflow: scroll;
+
+}

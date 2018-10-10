@@ -1,15 +1,20 @@
 import React, { Component } from "react";
 import Nav1 from "../components/Nav1";
-// import MyBooks from "../components/MyPage/MyBooks";
-// import Profile from "../components/MyPage/Profile";
+
+import MyPageProFile from "../components/MyPage/MyPageProFile"
+
+import '../components/MyPage/CSS/MyPage.css'
+
 
 class MyPage extends Component {
+
   render() {
     return (
-      <div>
-        <Nav1 />
+      <div className = 'MyPage'>
+      <Nav1/>
+      <MyPageProFile/>
       </div>
-    );
+    )
   }
 }
 
