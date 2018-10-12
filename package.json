@@ -4,9 +4,9 @@
   "private": true,
   "dependencies": {
     "axios": "^0.18.0",
-    "e": "0.0.4",
     "draft-js": "^0.10.5",
     "draft-js-editor": "^1.12.4",
+    "e": "0.0.4",
     "react": "^16.5.2",
     "react-bootstrap": "^0.32.4",
     "react-cursor-position": "^3.0.3",
