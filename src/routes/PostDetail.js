@@ -1,10 +1,12 @@
 import React, { Component } from "react";
 import { Icon } from "semantic-ui-react";
+import axios from 'axios';
 import Nav1 from '../components/Nav1';
 import Reply from '../components/PostDetail/Reply';
 import "../components/PostDetail/PostDetail.css";
 
 class PostDetail extends Component {
+
   mockData = 
     {
       username : '제니퍼 로렌스',
@@ -41,13 +43,31 @@ class PostDetail extends Component {
       isFollowing: false,
     }
 
+  state = {
+    thumbnail : '',
+    title : '',
+    content: '',
+
+  }
+
+  _getPostData = () => {
+    // this.props 가 어떻게 오는지 봐야함.
+    axios.get()
+
+  }
+
+  componentWillMount(){
+    this._getPostData()
+  }
+
   render() {
     return (
       <div>
         <Nav1 />
+        {console.log(this.props)}
         <div className='post_detail'>
           <div className='post_detail_left'>
-            <div> <img height={window.innerHeight * 0.6} src={this.mockData.thumbnail} alt={this.mockData.title}/></div>
+            <div> <img height={window.innerHeight * 0.6} src={this.props.location.state.imgurl} alt={this.mockData.title}/></div>
             <h2>{this.mockData.title}</h2> 
             <div className='post_detail_content'>{this.mockData.content}</div> 
           </div>
@@ -76,17 +96,6 @@ class PostDetail extends Component {
               {this.mockData.reply.map(reply => <Reply reply={reply}/>)}
             </div>
 
-            
-            
-            {/* <Icon name="paw" size="big" />
-            <Icon name="rocket" size="big" />
-            <Icon name="magic" size="big" />
-            <Icon name="gem outline" size="big" />
-            <Icon name="user secret" size="big" />
-            <Icon name="pencil alternate" size="big" />
-            <Icon name="gulp" size="big" /> */}
-            {/* <div> like: {this.mockData.likeCount} </div> */}
-            {/* <div> {this.mockData.reply[0]}</div> */}
           </div>
         </div>
       </div>
