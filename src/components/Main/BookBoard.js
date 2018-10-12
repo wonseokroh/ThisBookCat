@@ -8,10 +8,12 @@ class BookBoard extends Component {
             <Link to={{
                 pathname : `/postdetail/${this.props.url}`,
                 state : {
-                    imgurl : `https://picsum.photos/300/300?image=${this.props.url}`,
+                    imgUrl : `https://picsum.photos/300/300?image=${this.props.url}`,
+                    username : this.props.author,
                 }
             }}>
                 <div className ='BookBoard'>
+                    {console.log('BookBoard component에서 this.props 찍는중', this.props)}
                     <img className = 'likeThumbnail' src = {`https://picsum.photos/300/300?image=${this.props.url}`} alt='bookcover' />
                 </div>
             </Link>
