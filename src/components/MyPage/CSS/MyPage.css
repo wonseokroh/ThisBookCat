@@ -1,0 +1,36 @@
+.ProFilePhotoContainer {
+
+    border:solid;
+    border-color: black;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    position: relative;
+    left: 10%;
+    overflow: hidden;
+    
+}
+
+.ProFileDetail {
+    position: relative;
+    left: 35%;
+    font-size:200%;
+}
+
+.ID_user {
+    position: relative;
+    right: 10%;
+}
+
+.custom-icon {
+    position: relative;
+    left: 20%;
+}
+
+.Follower {
+    position: relative;
+    left:15%;
+}
+
+
+

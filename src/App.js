@@ -16,10 +16,11 @@ import "./App.css";
 class App extends Component {
   render() {
     return (
-      <div>
+      <div className = 'App'>
         <Router>
           <Switch>
-            <Route exact path="/" component={Login} />
+            <Route exact path="/" component={Main} />
+            <Route path="/login" component={Login} />
             <Route path="/signup" component={SignUp} />
             <Route path="/findpw" component={FindPw} />
             <Route path="/resetpw" component={ResetPw} />
