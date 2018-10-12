@@ -7,7 +7,9 @@ import BookBoard from "../components/Main/BookBoard";
 import "../components/Main/CSS/Main.css";
 
 class Main extends Component {
-  state = {};
+  state = {
+    items: 20
+  };
 
   componentDidMount() {
     this._getUrls();

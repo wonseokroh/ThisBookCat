@@ -13,14 +13,13 @@
     padding: 3%;
 }
 
+.BookBoard:hover {
+    background-color: lightgray;
+    
+}
+
 .likeThumbnail {
     position: relative;
     border-radius: 25px;
     right:5%;
-    top:-10000%;
-}
-
-.BookBoard:hover {
-    background-color: lightgray;
-    
 }
