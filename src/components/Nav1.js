@@ -1,12 +1,5 @@
 import React, { Component } from "react";
-import {
-  Navbar,
-  Nav,
-  NavItem,
-  FormControl,
-  FormGroup,
-  Button
-} from "react-bootstrap";
+import { Navbar, Nav, NavItem } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { Icon, Input } from "semantic-ui-react";
 import "./Nav1.css";
@@ -28,7 +21,7 @@ class Nav1 extends Component {
             <Input action={{ icon: "search" }} placeholder="Search..." />
           </Navbar.Form>
           <Nav pullRight>
-            <NavItem eventKey={2} href="/main">
+            <NavItem eventKey={2} href="/followings">
               <Icon name="tags" size="big" />
             </NavItem>
             <NavItem eventKey={2} href="/mylike">
