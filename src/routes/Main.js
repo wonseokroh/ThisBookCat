@@ -27,7 +27,6 @@ class Main extends Component {
 
   _renderBooKCoverImage = () => {
     console.log(this.state.coverurl);
-
     const bookcover = this.state.coverurl.map(url => {
       return <BookBoard url={url.id} author={url.author} key={url.id} />;
     });
