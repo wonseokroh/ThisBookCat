@@ -99,7 +99,7 @@
 }
 
 .post_detail_right_3{
-  height: 550px;
+  height: 450px;
   overflow: auto;
   padding-top: 10px;
   padding-left: 10px;
@@ -107,4 +107,8 @@
 
 .post_detail_right_3::-webkit-scrollbar {
   display: none;
+ }
+
+ .post_detail_reply_input{
+   width : 100%;
  }

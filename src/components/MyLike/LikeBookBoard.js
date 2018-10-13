@@ -1,7 +1,7 @@
 import React, {Component} from "react"
 import { Link } from 'react-router-dom';
 
-class BookBoard extends Component {
+class LikeBookBoard extends Component {
 
     render(){
         return(
@@ -9,11 +9,10 @@ class BookBoard extends Component {
                 pathname : `/postdetail/${this.props.url}`,
                 state : {
                     imgUrl : `https://picsum.photos/300/300?image=${this.props.url}`,
-                    username : this.props.author,
+                    username : this.props.author
                 }
             }}>
-                <div className ='BookBoard'>
-                    {console.log('BookBoard component에서 this.props 찍는중', this.props)}
+                <div className ='LikeBookBoard'>
                     <img className = 'likeThumbnail' src = {`https://picsum.photos/300/300?image=${this.props.url}`} alt='bookcover' />
                 </div>
             </Link>
@@ -27,4 +26,4 @@ class BookBoard extends Component {
     }
 }
 
-export default BookBoard;
+export default LikeBookBoard;

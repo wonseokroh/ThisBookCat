@@ -1,0 +1,20 @@
+.PhotoUploadModal {
+
+  text-align: center;
+  justify-content: center;
+
+}
+
+.modal-footer {
+  text-align: center;
+}
+
+input {
+  position: relative;
+  margin:2%
+}
+
+button {
+  margin:2%;
+}
+

@@ -7,7 +7,9 @@ import BookBoard from "../components/Main/BookBoard";
 import "../components/Main/CSS/Main.css";
 
 class Main extends Component {
-  state = {};
+  state = {
+    items: 20
+  };
 
   componentDidMount() {
     this._getUrls();
@@ -25,7 +27,6 @@ class Main extends Component {
 
   _renderBooKCoverImage = () => {
     console.log(this.state.coverurl);
-
     const bookcover = this.state.coverurl.map(url => {
       return <BookBoard url={url.id} author={url.author} key={url.id} />;
     });
