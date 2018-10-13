@@ -1,0 +1,24 @@
+.MyLike {
+    text-align: center;
+}
+
+.LikeBookBoard {
+    display: inline-block;
+    border:solid;
+    border-width: 1px;
+    border-color: white;
+    border-radius: 25px;
+    margin: 2%;
+    size:100%;
+    padding: 3%;
+}
+
+.LikeBookBoard:hover {
+    background-color: lightgray;
+}
+
+.likeThumbnail {
+    position: relative;
+    border-radius: 25px;
+    right:5%;
+}
