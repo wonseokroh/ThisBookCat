@@ -1,13 +1,21 @@
 import React, { Component } from 'react'
 
 export default class Reply extends Component {
-  state = {
-    re_reply: true,
-    reply : '',
+  constructor(props){
+    super(props);
+    this.state={
+      re_reply: true,
+      reply : '',
+      replyclicked:false
+    }
+    this._makeReply = this._makeReply.bind(this);
   }
 
+ 
   _makeReply = () => {
-    console.log('')
+this.setState({
+  replyclicked : true
+})
   }
 
   render() {
@@ -19,6 +27,8 @@ export default class Reply extends Component {
 
         <span className='reply_username'>{this.props.reply.username} </span>
         <span className='reply_msg' onClick>{this.props.reply.msg} </span>
+        <span onClick={this._makeReply}>댓글달기</span>
+        {this.state.replyclicked ? <div>@{this.props.reply.username}<input type="text"></input></div> : null}
       </div>
     )
   }
