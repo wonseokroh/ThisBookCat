@@ -1,0 +1,27 @@
+.app {
+  width: 100%;
+  height: 100%;
+}
+.previewComponent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  border-width: 2px;
+  border-style: dashed;
+}
+.photoBox {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+.bookImage {
+  display: "inline";
+  width: 101%;
+  height: 101%;
+}

@@ -1,0 +1,110 @@
+.post_detail{
+  width: 80%;
+  
+  margin: 0 auto;
+  /* 블록 레벨 엘리먼트의 width를 설정하면 컨테이너의 좌우 가장자리로 늘어나지 않게 할 수 있습니다.
+  그런 다음 좌우 마진을 auto로 설정해 해당 엘리먼트를 컨테이너 안에서 가로 중앙에 오게 할 수 있습니다.
+  엘리먼트는 여러분이 지정한 너비를 차지할 테고, 나머지 공간은 두 마진에 균등하게 나눠질 것입니다.
+  브라우저 창이 엘리먼트 너비보다 좁을 때 유일하게 문제가 발생합니다.
+  브라우저에서는 페이지에 가로 스크롤바를 만들어 이 문제를 해결합니다. 그럼 이 같은 상황을 개선해 봅시다... */
+
+  /*  width:600px; 이었던거를 max-width:600px;를 줘서 해결함..*/
+
+  /* 이러한 상황에서 width 대신 max-width를 사용하면 브라우저가 작은 창을 처리하는 방식을 개선할 수 있습니다.
+  이것은 사이트를 모바일 환경에서도 사용할 수 있게 만들 때 중요합니다. 이 페이지의 크기를 조절해서 어떻게 바뀌었는지 확인해 보세요!
+  그나저나 max-width는 IE7+를 비롯한 주요 브라우저에서 모두 지원되므로 안심하고 사용하셔도 됩니다.*/
+  /* padding: 5px; */
+
+  display: flex;
+  flex-direction: row;
+}
+
+.post_detail_left {
+ flex: 70%;
+ padding-right: 20px;
+ overflow : scroll;
+ overflow-x: hidden;
+}
+.post_detail_left::-webkit-scrollbar {
+  display: none;
+ }
+
+.post_detail_right {
+  flex: 30%;
+ }
+
+.post_detail_content{
+  height: 140px;
+}
+
+.post_detail_username{
+  display: inline-block;
+  padding: 0 10px 0 10px;
+}
+
+.img-circle {
+  width: 50px;
+  height: auto;
+  border-radius: 50%;
+  margin: 10px;
+}
+
+.reply_username{
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+.reply{
+  padding-bottom: 0.7rem;
+}
+.reply_msg{
+  font-size: 1.1em;
+}
+
+.post_detail_right_1{
+  /* background-color: #ffcc5c; */
+  border-bottom: 0.1em solid grey;
+  padding-bottom: 20px;
+  padding-left: 10px;
+}
+
+.post_detail_following{
+  display: inline-block;
+  padding: 5px 10px 5px 10px;
+  background-color: black;
+  border-radius: 0.1em;
+  color: white;
+}
+
+.post_detail_follow{
+  display: inline-block;
+  padding: 5px 10px 5px 10px;
+  border: 0.1em solid black;
+  border-radius: 0.1em;
+  color: black;
+}
+
+.post_detail_right_2{
+  border-bottom: 0.1em solid grey;
+  padding: 10px 0 10px 0;
+  padding-left: 10px;
+  display: flex;
+  flex-direction: row;
+}
+
+.post_detail_icon{
+  flex: 1;
+  /* justify-content: space-between;
+  align-content: center; */
+}
+
+.post_detail_right_3{
+  height: 550px;
+  overflow: auto;
+  padding-top: 10px;
+  padding-left: 10px;
+}
+
+.post_detail_right_3::-webkit-scrollbar {
+  display: none;
+ }
