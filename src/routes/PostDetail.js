@@ -49,28 +49,27 @@ class PostDetail extends Component {
     title : '',
     content: '',
     reply: [
-      {username: '지혁', msg: '안녕하세요'},
-      {username: '명우', msg: '해리포터 좋아요!'},
-      {username: '원석', msg: 'Na to the Fla'},
-      {username: '정민', msg: '안녕하세요. 허교익입니다. 떡볶이는 맛이 없는 음식입니다. 쏘ㅑㄹ라 소ㅑㄹ라 소ㅑㄹㄹ쇗라'},
-      {username: '지혁', msg: '안녕하세요'},
-      {username: '명우', msg: '해리포터 좋아요!'},
-      {username: '원석', msg: 'Na to the Fla'},
-      {username: '정민', msg: '안녕하세요. 허교익입니다. 떡볶이는 맛이 없는 음식입니다. 쏘ㅑㄹ라 소ㅑㄹ라 소ㅑㄹㄹ쇗라'},
-      {username: '지혁', msg: '안녕하세요'},
-      {username: '명우', msg: '해리포터 좋아요!'},
-      {username: '원석', msg: 'Na to the Fla'},
-      {username: '정민', msg: '안녕하세요. 허교익입니다. 떡볶이는 맛이 없는 음식입니다. 쏘ㅑㄹ라 소ㅑㄹ라 소ㅑㄹㄹ쇗라'},
-      {username: '지혁', msg: '안녕하세요'},
-      {username: '명우', msg: '해리포터 좋아요!'},
-      {username: '원석', msg: 'Na to the Fla'},
-      {username: '정민', msg: '안녕하세요. 허교익입니다. 떡볶이는 맛이 없는 음식입니다. 쏘ㅑㄹ라 소ㅑㄹ라 소ㅑㄹㄹ쇗라'},
-      {username: '지혁', msg: '안녕하세요'},
-      {username: '명우', msg: '해리포터 좋아요!'},
-      {username: '원석', msg: 'Na to the Fla'},
-      {username: '정민', msg: '안녕하세요. 허교익입니다. 떡볶이는 맛이 없는 음식입니다. 쏘ㅑㄹ라 소ㅑㄹ라 소ㅑㄹㄹ쇗라'},
-      {username: '명우', msg: '해리포터 좋아요!'},
-      {username: '원석', msg: 'Na to the Fla'}
+      {reply_id:1, username: '지혁', msg: '안녕하세요'},
+      {reply_id:2, username: '명우', msg: '해리포터 좋아요!'},
+      {reply_id:3, username: '원석', msg: 'Na to the Fla'},
+      {reply_id:4, username: '정민', msg: '안녕하세요. 허교익입니다. 떡볶이는 맛이 없는 음식입니다. 쏘ㅑㄹ라 소ㅑㄹ라 소ㅑㄹㄹ쇗라'},
+      {reply_id:5, username: '지혁', msg: '안녕하세요'},
+      {reply_id:6, username: '명우', msg: '해리포터 좋아요!'},
+      {reply_id:7, username: '정민', msg: '안녕하세요. 허교익입니다. 떡볶이는 맛이 없는 음식입니다. 쏘ㅑㄹ라 소ㅑㄹ라 소ㅑㄹㄹ쇗라'},
+      {reply_id:8, username: '지혁', msg: '안녕하세요'},
+      {reply_id:9, username: '명우', msg: '해리포터 좋아요!'},
+      {reply_id:10, username: '원석', msg: 'Na to the Fla'},
+      {reply_id:11, username: '정민', msg: '안녕하세요. 허교익입니다. 떡볶이는 맛이 없는 음식입니다. 쏘ㅑㄹ라 소ㅑㄹ라 소ㅑㄹㄹ쇗라'},
+      {reply_id:12, username: '지혁', msg: '안녕하세요'},
+      {reply_id:13, username: '명우', msg: '해리포터 좋아요!'},
+      {reply_id:14, username: '원석', msg: 'Na to the Fla'},
+      {reply_id:15, username: '정민', msg: '안녕하세요. 허교익입니다. 떡볶이는 맛이 없는 음식입니다. 쏘ㅑㄹ라 소ㅑㄹ라 소ㅑㄹㄹ쇗라'},
+      {reply_id:16, username: '지혁', msg: '안녕하세요'},
+      {reply_id:17, username: '명우', msg: '해리포터 좋아요!'},
+      {reply_id:18, username: '원석', msg: 'Na to the Fla'},
+      {reply_id:19, username: '정민', msg: '안녕하세요. 허교익입니다. 떡볶이는 맛이 없는 음식입니다. 쏘ㅑㄹ라 소ㅑㄹ라 소ㅑㄹㄹ쇗라'},
+      {reply_id:20, username: '명우', msg: '해리포터 좋아요!'},
+      {reply_id:21, username: '원석', msg: 'Na to the Fla'}
      ],
     replyCount : '', //댓글 갯수
     isLike: false, // 지금 보고있는 유저가 이 포스트를 좋아하는지 아닌지 (렌더전에 받아온 데이터에 의해 초기값이 세팅되어야 함.)- 클릭 하냐 마냐에 따라 likecount 도 변동되어야 함.
@@ -79,12 +78,16 @@ class PostDetail extends Component {
     show : false,
     yap: '',
     isFollowing: true,
-
+    comment:'',
   }
 
   _getPostData = () => {
     // this.props 가 어떻게 오는지 봐야함.
-    axios.get()
+    // axios.get()
+  }
+
+  _newReply = (e) => {
+    this.setState({comment: e.target.value})
   }
 
   _makeReply = () => {
@@ -92,12 +95,12 @@ class PostDetail extends Component {
     //axios.post ()
     // res 받기 ()
     // this.setState({reply:'썸띵썸띵'});
-  }
-
-  _makeReReply = () => {
-    //axios.post() //대댓글 달 댓글에 post를 보낸다.
-    //res 받아서
-    //this.setState({reply})
+    const reply = this.state.reply
+    reply.push({
+      reply_id: this.state.reply.length,
+      username: '원석',
+      msg: this.state.comment})
+    this.setState({reply: reply});
   }
 
   _getBookInfo = () => {
@@ -172,25 +175,31 @@ class PostDetail extends Component {
             </div>
 
             <div className='post_detail_right_2'>
-              <div className='post_detail_icon'><Icon name="pencil alternate" size="large" /> X {this.mockData.reply.length}</div>
+              <div className='post_detail_icon'><Icon name="pencil alternate" size="large" fitted/> X {this.state.reply.length}</div>
               <div className='post_detail_icon'>
                 {this.state.isLike ?
-                  <span><Icon name="lemon" size="large" onClick={this._handleLike} />X {this.state.likeCount}</span> :
-                  <span><Icon name="lemon outline" size="large" onClick={this._handleLike} />X {this.state.likeCount}</span>}
+                  <span><Icon name="lemon" size="large" fitted onClick={this._handleLike} />X {this.state.likeCount}</span> :
+                  <span><Icon name="lemon outline" size="large" fitted onClick={this._handleLike} />X {this.state.likeCount}</span>}
               </div>
               <div className='post_detail_icon' onClick={this._handleShow}>
-                <Icon name="book" size="large"/> info
+                <Icon name="book" size="large" fitted/> info
               </div>
               <BookInfoModal show = {this.state.show} hide = {this._handleClose} />
             </div>
             
             <div className='post_detail_right_3'>
-              {this.mockData.reply.map((reply, index) => <Reply reply={reply} key={index}/>)}
+              {this.state.reply.map((reply, index) => <Reply reply={reply} key={index}/>)}
             </div>
 
             <div className='post_detail_right_2'>
-              <input className='post_detail_reply_input' type="text" placeholder="댓글을 입력해라"></input>
-              <span><button><Icon name="pencil alternate" size="large" /></button></span>
+              <form>
+                <input
+                  className='post_detail_reply_input'
+                  type="text"
+                  placeholder="댓글을 입력해라"
+                  onChange={this._newReply}></input>
+                <span onClick={this._makeReply}><Icon name="pencil alternate" fitted size="large" /></span>
+              </form>
             </div>
 
           </div>
