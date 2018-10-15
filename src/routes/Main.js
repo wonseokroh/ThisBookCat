@@ -8,11 +8,13 @@ import "../components/Main/CSS/Main.css";
 
 class Main extends Component {
   state = {
-    items: 20
+    items: 20,
+    coverurl:''
   };
 
   componentDidMount() {
-    this._getUrls();
+    this._getUrls()
+    window.addEventListener('scroll', this._infiniteScroll, true)
   }
 
   componentWillMount() {
@@ -25,35 +27,51 @@ class Main extends Component {
     // this.getDBdata(); 같은 함수.해주기. 밑에 렌더해주려면 필요한 데이터받아오기.
   }
 
+  _infiniteScroll = () => {
+    let scrollHeight = Math.max(document.documentElement.scrollHeight, document.body.scrollHeight);
+
+    let scrollTop = Math.max(document.documentElement.scrollTop, document.body.scrollTop);
+
+    let clientHeight = document.documentElement.clientHeight;
+    
+    if(scrollTop + clientHeight === scrollHeight) {
+      this.setState({
+        items:this.state.items+20
+      })
+    }
+ }
+
   _renderBooKCoverImage = () => {
-    console.log(this.state.coverurl);
-    const bookcover = this.state.coverurl.map(url => {
-      return <BookBoard url={url.id} author={url.author} key={url.id} />;
-    });
-    return bookcover;
+    if(this.state.coverurl) {
+      const bookcover = this.state.coverurl.map((url, index) => {
+        if(index<this.state.items) {
+          return <BookBoard url={url.id} author={url.author} key={url.id} />;
+        }
+      });
+      return bookcover;
+    }
+    return "Loading"
   };
 
   _getUrls = async () => {
     const coverurl = await this._callBookCoverAPI();
-    console.log(coverurl);
     this.setState({
       coverurl
-    });
+    })
   };
 
   _callBookCoverAPI = () => {
     const booklistAPI = "https://picsum.photos/list";
-    return axios.get(booklistAPI).then(response => response.data);
+    return axios.get(booklistAPI).then(response => response.data)
   };
 
   render() {
     return (
       <div className="Main">
-        <Nav1 />
-        {this.state.coverurl ? this._renderBooKCoverImage() : "Loading"}
+        <Nav1/>
+        {this._renderBooKCoverImage()}
       </div>
     );
   }
 }
-
 export default Main;

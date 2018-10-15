@@ -33,9 +33,9 @@ class MyPageProFile extends Component {
       }
 
       _renderImages = () => {
-      const images = this.state.images.map((image) => {
-          if(this.state.author===image.author) {
-            return <MyBookBoard image={image.id} author={image.author} key={image.id}/>
+      const images = this.state.images.map((url) => {
+          if(this.state.author===url.author) {
+            return <MyBookBoard url={url.id} author={url.author} key={url.id}/>
           }
           return images
       })
