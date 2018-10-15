@@ -111,4 +111,10 @@
 
  .post_detail_reply_input{
    width : 100%;
+  border:none;
+  border-right:0px;
+  border-top:0px;
+  border-left:0px;
+  border-bottom:0px;
+  outline-width: 0;
  }

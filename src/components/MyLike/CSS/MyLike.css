@@ -1,8 +1,8 @@
-.Main {
+.MyLike {
     text-align: center;
 }
 
-.BookBoard {
+.LikeBookBoard {
     display: inline-block;
     border:solid;
     border-width: 1px;
@@ -13,9 +13,8 @@
     padding: 3%;
 }
 
-.BookBoard:hover {
+.LikeBookBoard:hover {
     background-color: lightgray;
-    
 }
 
 .likeThumbnail {
