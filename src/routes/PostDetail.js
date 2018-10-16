@@ -79,6 +79,24 @@ class PostDetail extends Component {
     yap: '',
     isFollowing: true,
     comment:'',
+    selectedFile: null,
+  }
+
+  fileChangedHandler = (e) => {
+    this.setState({selectedFile: e.target.files[0]})
+  }
+
+  uploadHandler = () => {
+    console.log(this.state.selectedFile)
+
+    const formData = new FormData()
+    formData.append('myFile', this.state.selectedFile, this.state.selectedFile.name)
+    axios.post('/file-upload', formData)
+    // axios.post('/file-upload', formData, {
+    // onUploadProgress: progressEvent => {
+    //   console.log(progressEvent.loaded / progressEvent.total)
+    // }
+    // })
   }
 
   _getPostData = () => {
@@ -200,6 +218,12 @@ class PostDetail extends Component {
                   onChange={this._newReply}></input>
                 <span onClick={this._makeReply}><Icon name="pencil alternate" fitted size="large" /></span>
               </form>
+            </div>
+            
+            
+            <div>
+            <input type="file" onChange={this.fileChangedHandler} />
+            <button onClick={this.uploadHandler}>Upload!</button>
             </div>
 
           </div>
