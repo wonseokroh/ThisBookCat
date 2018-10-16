@@ -31,7 +31,7 @@ class Login extends Component {
       password : this.state.password
     };  //TODO: Login Post 요청 날릴때 어떤 형식으로 보내줘야 하는지. user 객체처럼 보내주면 되나? 
 
-    axios.post(`로그인 post 날릴 endpoint`, { user })
+    axios.post(``, { user })
       .then(res => {
         console.log(res);
         console.log(res.data);//?
