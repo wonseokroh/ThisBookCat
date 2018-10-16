@@ -9,7 +9,8 @@ class SignUp extends Component {
     email : '',
     password : '',
     confirmPassword : true,
-    signupDone : false,
+    signUp_Done : false,
+    signUp_Err: false,
   }
 
   _setEmail = (e) => {
@@ -37,33 +38,57 @@ class SignUp extends Component {
 
     if(this.state.email && this.state.password && this.state.confirmPassword){
       const user = {
-        email : this.state.email,
+        emailId : this.state.email,
         password : this.state.password
-      };  //TODO: Login Post 요청 날릴때 어떤 형식으로 보내줘야 하는지. user 객체처럼 보내주면 되나? 
-
-      console.log('signUp is ready_')
-      // axios.post(`SignUp post 날릴 endpoint`, { user })
-      // .then(res => {
-      //   console.log(res);
-      //   console.log(res.data);
-      //   res.json();//?
-      // })
-      // .then(data => {
-      //   if('data에 SignUp 잘됐다는 신호가 있으면'){
-      //    this.setState({signupDone : true})
-      //   }else{
-      //     // 로그인 실패했다는 신호가 나오면, TODO:이메일 비밀번호가 일치하지 않습니다. alert창? 띄우기? 아니면 그 메세지div만 추가?
-      //   }
-      // })
-    }
+      };  
     
+      // TODO: {"emailId":"sueminee@gmail.com", "password": "123"} 이렇게 보내라길래.
+      // 아래처럼 제이슨스트링거파이 했더니 400에러뜸.
+      // const user = JSON.stringify({
+      //   emailId : this.state.email,
+      //   password : this.state.password
+      // }); 
+      
+      console.log('signUp is ready_', user)
+
+      axios.post(`http://ec2-13-125-246-249.ap-northeast-2.compute.amazonaws.com:3000/api/user`, user)
+      .then(res => {
+        console.log('res', res);
+        console.log('res.data', res.data);
+        if(res.status === 200){
+          this.setState({
+            signUp_Done : true,
+            signUp_Err : false,
+          })
+
+        }else{
+          this.setState({
+            signUp_Done : false,
+            signUp_Err : true})
+            // TODO:sign up 실패했다는 신호가 나오면, 이메일 비밀번호가 일치하지 않습니다.
+            // alert창? 띄우기? 아니면 그 메세지div만 추가?
+        }
+      })
+    }
   }
 
   render() {
     // TODO: 서버랑 통신되면 여기 주석 풀기
-    // if(this.state.signupDone)){
-    //   return <Redirect to ='/login' />;
-    // }else{
+    if(this.state.signUp_Done){
+      return(
+        <div>
+          <div>{this.state.email}님! 이책반냥에 가입해주셔서 감사합니다.</div>
+            <Link to="/"><div>로그인하러 가기</div></Link>
+        </div>
+      )
+    }else if(this.state.signUp_Err){
+      return(
+        <div>
+          <div>회원가입에 실패했습니다.</div>
+            <Link to="/signup"><div>다시 회원가입하러 가기</div></Link>
+        </div>
+      )
+    }else{
       return (
         <div className='login_container' >
           <div className='signup_container_1'>
@@ -118,6 +143,6 @@ class SignUp extends Component {
       )
     }
   }
-// }
+}
 
 export default SignUp;

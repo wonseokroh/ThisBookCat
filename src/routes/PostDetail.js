@@ -79,6 +79,24 @@ class PostDetail extends Component {
     yap: '',
     isFollowing: true,
     comment:'',
+    selectedFile: null,
+  }
+
+  fileChangedHandler = (e) => {
+    this.setState({selectedFile: e.target.files[0]})
+  }
+
+  uploadHandler = () => {
+    console.log(this.state.selectedFile)
+
+    const formData = new FormData()
+    formData.append('myFile', this.state.selectedFile, this.state.selectedFile.name)
+    axios.post('/file-upload', formData)
+    // axios.post('/file-upload', formData, {
+    // onUploadProgress: progressEvent => {
+    //   console.log(progressEvent.loaded / progressEvent.total)
+    // }
+    // })
   }
 
   _getPostData = () => {
@@ -169,17 +187,17 @@ class PostDetail extends Component {
             <div className='post_detail_right_1'>
               <img src={this.mockData.userimg} className='img-circle' alt={this.props.location.state.username} />
               {this.state.isFollowing ?
-                  <h4 className='post_detail_following' onClick={this._handleFollowing}>팔로잉</h4> :
-                  <h4 className='post_detail_follow' onClick={this._handleFollowing}>팔로우</h4>}
-              <h1 className='post_detail_username'>{this.props.location.state.username}</h1>
+                  <h5 className='post_detail_following' onClick={this._handleFollowing}>팔로잉</h5> :
+                  <h5 className='post_detail_follow' onClick={this._handleFollowing}>팔로우</h5>}
+              <h3 className='post_detail_username'>{this.props.location.state.username}</h3>
             </div>
 
             <div className='post_detail_right_2'>
               <div className='post_detail_icon'><Icon name="pencil alternate" size="large" fitted/> X {this.state.reply.length}</div>
               <div className='post_detail_icon'>
                 {this.state.isLike ?
-                  <span><Icon name="lemon" size="large" fitted onClick={this._handleLike} />X {this.state.likeCount}</span> :
-                  <span><Icon name="lemon outline" size="large" fitted onClick={this._handleLike} />X {this.state.likeCount}</span>}
+                  <span><Icon name="lemon" size="large" fitted color="yellow"onClick={this._handleLike} />X {this.state.likeCount}</span> :
+                  <span><Icon name="lemon" size="large" fitted  color="grey" onClick={this._handleLike} />X {this.state.likeCount}</span>}
               </div>
               <div className='post_detail_icon' onClick={this._handleShow}>
                 <Icon name="book" size="large" fitted/> info
@@ -200,6 +218,12 @@ class PostDetail extends Component {
                   onChange={this._newReply}></input>
                 <span onClick={this._makeReply}><Icon name="pencil alternate" fitted size="large" /></span>
               </form>
+            </div>
+            
+            
+            <div>
+            <input type="file" onChange={this.fileChangedHandler} />
+            <button onClick={this.uploadHandler}>Upload!</button>
             </div>
 
           </div>

@@ -10,6 +10,7 @@ class Login extends Component {
     email : '',
     password : '',
     isLogin : false,
+    login_err:false,
   }
 
   _setEmail = (e) => {
@@ -29,33 +30,46 @@ class Login extends Component {
     const user = {
       email : this.state.email,
       password : this.state.password
-    };  //TODO: Login Post 요청 날릴때 어떤 형식으로 보내줘야 하는지. user 객체처럼 보내주면 되나? 
+    }; 
 
-    axios.post(``, { user })
+    axios.post(`http://ec2-13-125-246-249.ap-northeast-2.compute.amazonaws.com:3000/api/user/login`, user)
       .then(res => {
         console.log(res);
-        console.log(res.data);//?
-        return res.json();//?
-      })
-      .then(data => {
-        if(data.token){ //data에 토큰이 있으면 == 로그인이 됐으면, 
-          window.localStorage.setItem('token', data.token)
-          // TODO:토큰 심어주기
-          // TODO: 토큰 심어주기만 하면 isLogin state 필요없나? 필요없으면 없애자
-          this.setState({isLogin : true})
+        console.log(res.data);
+        if(res.status===200){
+          window.localStorage.setItem('token', res.data)
+          this.setState({
+            isLogin : true,
+            login_err : false})
         }else{
-          // 로그인 실패했다는 신호가 나오면, TODO:이메일 비밀번호가 일치하지 않습니다.
-          // alert창? 띄우기? 아니면 그 메세지div만 추가? 아니면 새로운 간단한 페이지?
+          this.setState({
+            isLogin : false,
+            login_err : true})
+          // 이메일 혹은 비밀번호가 올바르지 않습니다.
         }
       })
+  }
 
+  _googleAuth = (e) => {
+    axios.get('http://ec2-13-125-246-249.ap-northeast-2.compute.amazonaws.com:3000/auth/google')
+    .then(res => {
+      console.log('google Auth res입니다.', res)
+    })
   }
 
   render() {
     // TODO: 서버랑 통신되면 여기 주석 풀기
-    // if(window.localStorage.getItem('token')){
-    //   return <Redirect to ='/' />;
-    // }else{
+    if(window.localStorage.getItem('token')){
+      return <Redirect to ='/' />;
+    }
+    else if(this.state.login_err){
+      return(
+      <div>
+          <h1>로그인할 수 없습니다.</h1>
+          <h2>이메일 혹은 비밀번호가 올바르지 않습니다.</h2>
+          <Link to="/signup"><h4>다시 회원가입하러 가기</h4></Link>
+      </div>)
+    }else{
       return (
         <div className='login_container' >
           <div className='login_container_1'>
@@ -72,7 +86,7 @@ class Login extends Component {
             
             <h5>또는</h5>
             {/* <div><button className='login_btn'>FACEBOOK으로 계속하기</button></div> */}
-            <div><button className='login_btn'>GOOGLE로 계속하기</button></div>
+            <div><button className='login_btn' onClick={this._googleAuth}>GOOGLE로 계속하기</button></div>
             <div className='login_privacy'>{`계속하면 이책반냥 서비스 약관 및 개인정보 보호 정책에 동의하는 것으로 간주합니다.`}</div>
             <div className='login_flex'>
               <Link to="/signup"><div>회원가입</div></Link>
@@ -82,6 +96,6 @@ class Login extends Component {
         </div>
     );
   }}
-// }
+}
 
 export default Login;
