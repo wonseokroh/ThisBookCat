@@ -6,3 +6,14 @@
   font-weight: bold;
   color: #9999ff;
 }
+
+form{
+  height: 100px;
+  width: 500px;
+  display: inline;
+}
+
+input {
+  width : 50%;
+  height: 50px;
+}

@@ -1,0 +1,44 @@
+.reply{
+  margin: 1% auto;
+}
+
+#rereply{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  
+  width:95%;
+  /* background-color: darkgrey; */
+  /* border-radius: 15px; */
+  /* border-color: blueviolet;
+  border-width: 2px; */
+  /* border : 1.5px dashed teal; */
+  /* border-top:2px solid blue;
+  border-bottom:2px solid red;
+  border-left:2px solid chartreuse;
+  border-right:2px solid yellow; */
+  /* padding:3px; */
+  margin:1px auto;
+  box-sizing: border-box;
+}
+
+#rereply_who{
+  color: teal;
+  flex:1;
+}
+
+#rereply_input{
+  /* border:none;
+  border-right:0px;
+  border-top:0px;
+  border-left:0px;
+  border-bottom:0px;
+  outline-width: 0; */
+  border : 1px solid darkgrey;
+  flex:5;
+}
+
+#rereply_btn{
+  flex: 1;
+}

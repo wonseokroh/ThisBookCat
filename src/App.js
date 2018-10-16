@@ -16,7 +16,7 @@ import "./App.css";
 class App extends Component {
   render() {
     return (
-      <div>
+      <div className = 'App'>
         <Router>
           <Switch>
             <Route exact path="/" component={Main} />
@@ -25,7 +25,7 @@ class App extends Component {
             <Route path="/findpw" component={FindPw} />
             <Route path="/resetpw" component={ResetPw} />
             <Route path="/picktaste" component={PickTaste} />
-            {/* <Route path="/main" component={Main} /> */}
+            <Route path="/main" component={Main} />
             <Route path="/mylike" component={MyLike} />
             <Route path="/followings" component={Followings} />
             <Route path="/writepost" component={WritePost} />
