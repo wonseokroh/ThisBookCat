@@ -17,16 +17,6 @@ class Main extends Component {
     window.addEventListener('scroll', this._infiniteScroll, true)
   }
 
-  componentWillMount() {
-    //렌더전에 토큰있는지 확인하는 함수입니다.
-    if (!window.localStorage.getItem("token")) {
-      //토큰이 없으면
-      return <Redirect to="/login" />; //로그인페이지로 리다이렉 합니다.
-    }
-    console.log("컴포넌트 윌 마운트");
-    // this.getDBdata(); 같은 함수.해주기. 밑에 렌더해주려면 필요한 데이터받아오기.
-  }
-
    _infiniteScroll = () => {
     let scrollHeight = Math.max(document.documentElement.scrollHeight, document.body.scrollHeight);
 
@@ -77,13 +67,17 @@ class Main extends Component {
   };
 
   render() {
+    //토큰이 없으면 로그인 페이지로 가라.
+    if(!window.localStorage.getItem("token")){
+      return <Redirect to="/login" />
+    }else{
     return (
       <div className="Main">
         <Nav1/>
         {this._renderBooKCoverImage()}
       </div>
     );
-  }
+  }}
 }
 export default Main;
 
