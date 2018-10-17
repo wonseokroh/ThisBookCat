@@ -11,6 +11,7 @@ class Login extends Component {
     password : '',
     isLogin : false,
     login_err:false,
+    url : 'ec2-54-180-29-101.ap-northeast-2.compute.amazonaws.com'
   }
 
   _setEmail = (e) => {
@@ -28,11 +29,13 @@ class Login extends Component {
     console.log('Login.js의 handleSubmit함수입니다. this.state 찍는중', this.state)
     
     const user = {
-      email : this.state.email,
+      emailId : this.state.email,
       password : this.state.password
     }; 
-
-    axios.post(`http://ec2-13-125-246-249.ap-northeast-2.compute.amazonaws.com:3000/api/user/login`, user)
+    
+    
+    // axios.post(`http://ec2-54-180-29-101.ap-northeast-2.compute.amazonaws.com:3000/api/user/login`, user)
+    axios.post(`http://${this.state.url}:3000/api/user/login`, user)
       .then(res => {
         console.log(res);
         console.log(res.data);
@@ -49,9 +52,9 @@ class Login extends Component {
         }
       })
   }
-
+  
   _googleAuth = (e) => {
-    axios.get('http://ec2-13-125-246-249.ap-northeast-2.compute.amazonaws.com:3000/auth/google')
+    axios.get(`http://${this.state.url}:3000/auth/google`)
     .then(res => {
       console.log('google Auth res입니다.', res)
     })

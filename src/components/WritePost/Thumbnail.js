@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import "./Thumbnail.css";
 import { Icon } from "semantic-ui-react";
-import ReactDropzone from "react-dropzone";
+import Dropzone from "react-dropzone";
+import axios from 'axios';
 
 class Thumbnail extends Component {
   constructor(props) {
@@ -23,10 +24,10 @@ class Thumbnail extends Component {
   render() {
     return (
       <div className="app">
-        <ReactDropzone
+        <Dropzone
           className="previewComponent"
           accept="image/*"
-          onDrop={this.onPreviewDrop}
+          onDrop={this.onPreviewDrop.bind(this)}
         >
           {/* drag n drop을 할 수 있는 라이브러리 입니다. */}
           {this.state.files.length > 0 ? (
@@ -45,7 +46,7 @@ class Thumbnail extends Component {
               <Icon name="plus circle" size="huge" />
             </div>
           )}
-        </ReactDropzone>
+        </Dropzone>
       </div>
     );
   }
