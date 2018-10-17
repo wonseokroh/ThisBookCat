@@ -86,9 +86,9 @@ class Main extends Component {
 
   render() {
     //토큰이 없으면 로그인 페이지로 가라.
-    if(!window.localStorage.getItem("token")){
+   /*  if(!window.localStorage.getItem("token")){
       return <Redirect to="/login" />
-    }else{
+    }else{ */
     return (
       <div className="Main">
         <Nav1/>
@@ -97,7 +97,7 @@ class Main extends Component {
       </div>
     );
   }}
-}
+/* } */
 export default Main;
 
 

@@ -1,0 +1,81 @@
+.Followings {
+    display: grid;
+    grid-template-columns: 25% 50% 25%;
+}
+
+.gridOne {
+    justify-self: center
+}
+
+.gridTwo {
+    display: table-row;
+    justify-self: center
+
+}
+
+.gridThree {
+    justify-self: center
+}
+
+
+.FollowingBoard {
+    display: grid;
+    grid-template-columns: 70% 30%;
+    grid-template-rows: 100%;
+    border: solid;
+    border-width: 1px;
+    border-color: white;
+    border-radius: 1%;
+    margin-bottom: 3%;
+    size: 100%;
+    padding: 3%;
+    width: 100%;
+}
+
+.FollowingBoard:hover {
+    
+    background-color: lightgray;
+}
+
+.imagepart {
+    
+    justify-self: center;
+    grid-column-start: 1;
+    grid-column-end: 2;
+}
+
+.textpart {
+    
+    justify-self: center;
+    grid-column-start: 2;
+    grid-column-end: 3;
+}
+
+.followFooter {
+
+    justify-self: center;
+    grid-row-start: 2;
+    grid-row-end: 2;
+    grid-column-start: 1;
+    grid-column-start: 1;
+    width: 80%;
+}
+
+.FollowThumbnail {
+    position: relative;
+    border-radius: 25px;
+}
+
+
+
+.heart {
+    position: relative;
+    bottom: 20%;
+}
+
+.FollowerID {
+    position: relative;
+    display: inline-flex;
+    left: 15%;
+    bottom: 14%;
+}
