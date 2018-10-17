@@ -35,8 +35,6 @@ export default class Reply extends Component {
   render() {
     return (
       <div className='reply'>
-        {console.log(this.props.key, this.props.reply.reply_id)}
-
         {/* 댓글쓴사람 사진도 떠야함. TODO:postdetail에서 reply array에  댓글단 사람 img src도 가지고 props로 넘겨줄건지*/}
         {/* <img src={this.props.reply.userimg} className='img-circle' alt={this.props.reply.username} /> */}
         <span className='reply_username'>{this.props.reply.username} </span>

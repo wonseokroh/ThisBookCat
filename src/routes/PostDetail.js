@@ -80,6 +80,7 @@ class PostDetail extends Component {
     isFollowing: true,
     comment:'',
     selectedFile: null,
+    url : 'ec2-54-180-29-101.ap-northeast-2.compute.amazonaws.com',
   }
 
   fileChangedHandler = (e) => {
@@ -91,7 +92,9 @@ class PostDetail extends Component {
 
     const formData = new FormData()
     formData.append('myFile', this.state.selectedFile, this.state.selectedFile.name)
-    axios.post('/file-upload', formData)
+
+    axios.post(`http://${this.state.url}:3000/api/mainimage/`, formData)
+  
     // axios.post('/file-upload', formData, {
     // onUploadProgress: progressEvent => {
     //   console.log(progressEvent.loaded / progressEvent.total)
