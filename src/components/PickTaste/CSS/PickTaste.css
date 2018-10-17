@@ -101,6 +101,10 @@
     position: relative;
     width: 10%;
     height: 5%;
-    bottom: 10%;
-    left: 87%;
+    bottom: 8%;
+    left: 86%;
+}
+
+.tagName {
+    pointer-events:none
 }
